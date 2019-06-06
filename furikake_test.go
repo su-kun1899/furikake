@@ -20,10 +20,10 @@ func TestToCsv(t *testing.T) {
 		t.Fatal("unexpected error: ", err)
 	}
 
-	expected := `name,position
-Messi,Forward
-Coutinho,Midfielder
-Pique,Defender`
+	expected := `"name","position"
+"Messi","Forward"
+"Coutinho","Midfielder"
+"Pique","Defender"`
 
 	if actual != expected {
 		t.Errorf("ToCsv returns %v, expected %v", actual, expected)
