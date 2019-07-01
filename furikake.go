@@ -37,8 +37,8 @@ func ToCsv(header []string, json string) (string, error) {
 func format(values []string) string {
 	formatted := make([]string, len(values))
 	for i, v := range values {
-		// TODO ダブルクォートのエスケープ
-		formatted[i] = fmt.Sprintf("\"%s\"", v)
+		// ダブルクォートをエスケープして囲う
+		formatted[i] = fmt.Sprintf("\"%s\"", strings.ReplaceAll(v, "\"", "\"\""))
 	}
 	return strings.Join(formatted, ",")
 }

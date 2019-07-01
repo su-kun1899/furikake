@@ -10,7 +10,8 @@ func TestToCsv(t *testing.T) {
 [
 	{"name":"Messi", "position":"Forward"},
 	{"name":"Coutinho", "position":"Midfielder"},
-	{"name":"Pique", "position":"Defender"}
+	{"name":"Pique", "position":"Defender"},
+	{"name":"Sua\"rez", "position":"Fo\"rw\"ar\"d"}
 ]
 `
 
@@ -23,7 +24,8 @@ func TestToCsv(t *testing.T) {
 	expected := `"name","position"
 "Messi","Forward"
 "Coutinho","Midfielder"
-"Pique","Defender"`
+"Pique","Defender"
+"Sua""rez","Fo""rw""ar""d"`
 
 	if actual != expected {
 		t.Errorf("ToCsv returns %v, expected %v", actual, expected)
